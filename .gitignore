@@ -1,0 +1,10 @@
+*.env
+*.key
+*.pem
+*.token
+*.p12
+*.jks
+id_rsa*
+*.sqlite
+__pycache__/
+*.log
