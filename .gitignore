@@ -9,3 +9,4 @@ __pycache__/
 state/
 *.sqlite
 *.db
+forwarder/state.json
