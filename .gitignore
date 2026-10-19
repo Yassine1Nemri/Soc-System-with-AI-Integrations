@@ -1,10 +1,11 @@
+.env
 *.env
 *.key
 *.pem
-*.token
-*.p12
-*.jks
-id_rsa*
-*.sqlite
+*.bak
 __pycache__/
+*.pyc
 *.log
+state/
+*.sqlite
+*.db
