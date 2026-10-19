@@ -1,0 +1,38 @@
+{
+  "agent_name": "Webserveur",
+  "alert_name": "File added to the system.",
+  "alert_timestamp": "2026-10-20T00:29:09.898+0100",
+  "rule_id": "554",
+  "rule_level": 5,
+  "file_path": "/etc/cron.d/demo-persist",
+  "file_event": "added",
+  "file_size": "27",
+  "sha256": "0b743931cd526ef4533558048f8fdbf8b4be682b3a0c191358c316129ddea7f5",
+  "analysis_timestamp": "2026-10-19T23:39:41.798787+00:00",
+  "mitre": {
+    "id": "T1053.003",
+    "name": "Scheduled Task/Job: Cron",
+    "tactic": "Persistence",
+    "source": "lookup table"
+  },
+  "severity": "High",
+  "risk_score": 75,
+  "ai_risk_score_raw": 75,
+  "summary": "A new file was added to /etc/cron.d/demo-persist with SHA256 hash 0b743 3931cd526ef4533558048f8fdbf8b4be682b3a0c191358c316129ddea7f5",
+  "evidence": [
+    "File added: /etc/cron.d/demo-persist",
+    "File size: 27 bytes",
+    "SHA256: 0b743931cd526ef4533558048f8fdbf8b4be682b3a0c191358c316129ddea7f5",
+    "Wazuh rule 554 (level 5) on Webserveur"
+  ],
+  "evidence_text": "File added: /etc/cron.d/demo-persist | File size: 27 bytes | SHA256: 0b743931cd526ef4533558048f8fdbf8b4be682b3a0c191358c316129ddea7f5 | Wazuh rule 554 (level 5) on Webserveur",
+  "recommended_actions": [
+    "Verify the legitimacy of the file by checking its ownership and permissions",
+    "Review the cron job configuration in /etc/cron.d/demo-persist for unauthorized commands",
+    "Scan the file using a known good hash to confirm integrity"
+  ],
+  "recommended_actions_text": "Verify the legitimacy of the file by checking its ownership and permissions | Review the cron job configuration in /etc/cron.d/demo-persist for unauthorized commands | Scan the file using a known good hash to confirm integrity",
+  "false_positive_likelihood": "medium",
+  "confidence": "medium",
+  "validation_flags": []
+}
