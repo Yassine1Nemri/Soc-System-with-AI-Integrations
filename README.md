@@ -233,16 +233,6 @@ Every failure is in [`docs/problems-log.md`](docs/problems-log.md) with problem,
 - TLS verification to the Indexer is relaxed inside the lab network.
 - The AI accuracy sample is small, and I wrote the reference triage notes myself.
 
-## Roadmap
-
-- [x] Wazuh server and agent
-- [x] Extra monitoring: file integrity, auditd, UFW, custom rules
-- [x] NetAlertX
-- [x] Grafana dashboard with read-only Indexer user
-- [x] AI forwarder: filter, cooldown, redaction, retry, validation
-- [ ] Custom rule for cron persistence (T1053.003) so the alert reaches level 10 and the forwarder
-- [ ] Forwarder as a systemd service with a restricted user
-- [ ] Demo video
 
 ## Disclaimer
 
