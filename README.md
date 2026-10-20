@@ -4,6 +4,9 @@
 
 I attacked my own lab with techniques mapped to MITRE ATT&CK, extended Wazuh to see what it ignores by default, and sent the high-severity alerts through a Python forwarder to a local LLM (Ollama, `qwen3:4b`) for triage. Everything shows up on one Grafana dashboard.
 
+
+## Architecture
+
 ![Architecture](soc_diagram_updated.png)
 
 ## Table of contents
@@ -33,18 +36,7 @@ A change happens on the monitored Ubuntu target (a cron file, an SSH key, a port
 - 📊 **One dashboard** over two independent data sources (Wazuh Indexer and the NetAlertX API) plus the AI results.
 - 🔐 **Least privilege:** Grafana uses a read-only Indexer account (a write returns 403), and the Indexer stays bound to localhost, reached over an SSH tunnel.
 
-## Architecture
 
-```mermaid
-flowchart TD
-    LAN["Home Wi-Fi + VM network"] --> N["NetAlertX (host, Docker)"]
-    U["Ubuntu target VM<br/>Wazuh agent + auditd + UFW"] --> M["Wazuh server VM"]
-    M --> F["Forwarder<br/>filter, cooldown, redact, validate"]
-    F --> AI["Local LLM<br/>Ollama qwen3:4b"]
-    AI --> G["Grafana (host, Docker)"]
-    M --> G
-    N --> G
-```
 
 | Machine | Address | Role |
 |---|---|---|
